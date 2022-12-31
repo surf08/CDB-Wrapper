@@ -5,19 +5,19 @@
 int main(int argc, char *argv[])
 {
 	char path[MAX_PATH];
-	std::string fullPath;
+	std::string fullpath;
 	GetModuleFileNameA(NULL, path, MAX_PATH);
 	PathRemoveFileSpecA(path);
-	fullPath.append("\"").append(path).append("\\bin\\cdb.exe").append("\" ");
+	fullpath.append("\"").append(path).append("\\bin\\cdb.exe").append("\" ");
 	if (argc == 1)
-		fullPath.append("-?");
+		fullpath.append("-?");
 	else
 	{
-		fullPath.append("-abin\\ext.dll ");
+		fullpath.append("-abin\\ext.dll ");
 		for (int i = 1; i < argc; i++)
-			fullPath.append(argv[i]).append(" ");
-		fullPath.pop_back();
+			fullpath.append(argv[i]).append(" ");
+		fullpath.pop_back();
 	}
-	system(fullPath.c_str());
+	system(fullpath.c_str());
 	return 0;
 }
