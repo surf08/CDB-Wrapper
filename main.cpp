@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 	std::string fullpath;
 	GetModuleFileNameA(NULL, path, MAX_PATH);
 	PathRemoveFileSpecA(path);
-	fullpath.append("\"").append(path).append("\\bin\\cdb.exe").append("\" ");
+	fullpath.append("\"").append(path).append("\\bin\\cdb.exe""\" ");
 	if (argc == 1)
 		fullpath.append("-?");
 	else
